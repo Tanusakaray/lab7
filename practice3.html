@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EECS 348 Lab Seven Practice Three</title>
+</head>
+<body>
+    <h1>Password Verification</h1>
+    <label for="password1">First Password: </label>
+    <input type="password" id="password1" placeholder="Password">
+    <br>
+    <label for="password2">Second Password: </label>
+    <input type="password" id="password2" placeholder="Re-enter Password">
+    <br>
+    <button id="verify">Validate Your Passwords</button>
+
+    <script>
+        const verifyButton = document.getElementById("verify");
+
+        verifyButton.addEventListener("click", () => {
+            const password1 = document.getElementById("password1").value;
+            const password2 = document.getElementById("password2").value;
+
+            if (password1.length < 8) {
+                alert("Password must be at least eight characters long.");
+            } else if (password1 !== password2) {
+                alert("Passwords do not match. Please re-enter the same password twice.");
+            } else {
+                alert("Passwords are matched!");
+            }
+        });
+    </script>
+</body>
+</html>
